@@ -76,7 +76,7 @@ def bits_to_int(bits):
 
 # Differential Cryptanalysis
 def differential_attack(key_guess_range=256):
-    input_diff = int_to_bits(0b00001111)
+    input_diff = 0b00001111
     key_counts = defaultdict(int)
     key = [random.randint(0, 1) for _ in range(10)]
     keys = generate_keys(key)
