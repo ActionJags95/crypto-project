@@ -1,5 +1,6 @@
 import hashlib
 import random
+from time import sleep
 
 # Step 1: Generate large prime numbers
 def is_prime(n, k=5):  # k = number of test rounds
@@ -102,15 +103,15 @@ def verify(message, signature, public_key):
 
 # 🔐 Main Execution
 public_key, private_key = generate_keys()
-message = "Secure communication using manual RSA!"
+message = input("Enter the message for transmission : ")
 
 signature = sign(message, private_key)
 print("🔏 Signature:", signature)
 
-valid = verify(message, signature, public_key)
-print("✅ Valid Signature:" if valid else "❌ Invalid Signature")
+print("Transmissing the message......")
+sleep(2)
 
-message = "Hello"
+message = input("Enter the string for validation : ")
 
 valid = verify(message, signature, public_key)
 print("✅ Valid Signature:" if valid else "❌ Invalid Signature")
